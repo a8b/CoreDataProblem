@@ -17,6 +17,8 @@ class ViewController: UIViewController {
         unFetch.returnsObjectsAsFaults = false
         let c = try! AppDelegate.persistentContainer.viewContext.fetch(unFetch)
         
+        
+        // MARK: - Problem here - students array for some university is empty
         for un in c {
             print("students count \(un.students?.count ?? 0)")
             for student in un.students?.allObjects ?? [] {
